@@ -1,0 +1,11 @@
+.vscode/*
+*.o
+*.out
+*.a
+*.c
+*.man
+*.pdf
+.clang_complete
+.DS_store
+!srcs/std/*.c
+!srcs/printf/*.c

@@ -1,0 +1,92 @@
+From 1afedbd1288d1babc1ca3dd0251b12d4474e997b Mon Sep 17 00:00:00 2001
+From: Thog <thog92@hotmail.fr>
+Date: Sat, 7 May 2016 19:42:12 +0200
+Subject: [PATCH] Windows support
+
+---
+ ft_printf/manage_str.c  |  4 ----
+ ft_printf/manage_wstr.c |  8 --------
+ ft_putwchar_fd.c        | 13 -------------
+ ft_wstrlen.c            |  4 ----
+ 4 files changed, 29 deletions(-)
+
+diff --git a/ft_printf/manage_str.c b/ft_printf/manage_str.c
+index 5323ef4..e2a2495 100644
+--- a/ft_printf/manage_str.c
++++ b/ft_printf/manage_str.c
+@@ -24,10 +24,6 @@ ssize_t	ft_printf_manage_wchar(char **format, va_list *args, t_data *data)
+ 		len = 1;
+ 	else if (chr <= 0x7FF)
+ 		len = 2;
+-	else if (chr <= 0xFFFF)
+-		len = 3;
+-	else if (chr <= 0x10FFFF)
+-		len = 4;
+ 	if (data->got_width && !data->right_pad)
+ 		ft_printf_width_pad(len, data->width, data->zero_pad ? '0' : ' ',
+ 				data->fd);
+diff --git a/ft_printf/manage_wstr.c b/ft_printf/manage_wstr.c
+index 5537c80..e2d59f5 100644
+--- a/ft_printf/manage_wstr.c
++++ b/ft_printf/manage_wstr.c
+@@ -23,10 +23,6 @@ void			ft_putnwstr(const wchar_t *str, size_t len, int fd)
+ 			i++;
+ 		else if (*str <= 0x7FF)
+ 			i += 2;
+-		else if (*str <= 0xFFFF)
+-			i += 3;
+-		else if (*str <= 0x10FFFF)
+-			i += 4;
+ 		if (i <= len)
+ 			ft_putwchar_fd(*str++, fd);
+ 	}
+@@ -40,10 +36,6 @@ static size_t	calc_wstrlen(wchar_t *str, int precision, size_t i)
+ 		return (calc_wstrlen(str + 1, precision - 1, i + 1));
+ 	else if (*str <= 0x7FF && precision >= 2)
+ 		return (calc_wstrlen(str + 1, precision - 2, i + 2));
+-	else if (*str <= 0xFFFF && precision >= 3)
+-		return (calc_wstrlen(str + 1, precision - 3, i + 3));
+-	else if (*str <= 0x10FFFF && precision >= 4)
+-		return (calc_wstrlen(str + 1, precision - 4, i + 4));
+ 	else
+ 		return (i);
+ }
+diff --git a/base/ft_putwchar_fd.c b/base/ft_putwchar_fd.c
+index 74655fc..bc3a18f 100644
+--- a/base/ft_putwchar_fd.c
++++ b/base/ft_putwchar_fd.c
+@@ -21,17 +21,4 @@ void		ft_putwchar_fd(wchar_t chr, int fd)
+ 		ft_putchar_fd((chr >> 6) + 0xC0, fd);
+ 		ft_putchar_fd((chr & 0x3F) + 0x80, fd);
+ 	}
+-	else if (chr <= 0xFFFF)
+-	{
+-		ft_putchar_fd((chr >> 12) + 0xE0, fd);
+-		ft_putchar_fd(((chr >> 6) & 0x3F) + 0x80, fd);
+-		ft_putchar_fd((chr & 0x3F) + 0x80, fd);
+-	}
+-	else if (chr <= 0x10FFFF)
+-	{
+-		ft_putchar_fd((chr >> 18) + 0xF0, fd);
+-		ft_putchar_fd(((chr >> 12) & 0x3F) + 0x80, fd);
+-		ft_putchar_fd(((chr >> 6) & 0x3F) + 0x80, fd);
+-		ft_putchar_fd((chr & 0x3F) + 0x80, fd);
+-	}
+ }
+diff --git a/base/ft_wstrlen.c b/base/ft_wstrlen.c
+index a71bdd2..c02fa76 100644
+--- a/base/ft_wstrlen.c
++++ b/base/ft_wstrlen.c
+@@ -23,10 +23,6 @@ size_t	ft_wstrlen(wchar_t *str)
+ 			i++;
+ 		else if (*str <= 0x7FF)
+ 			i += 2;
+-		else if (*str <= 0xFFFF)
+-			i += 3;
+-		else if (*str <= 0x10FFFF)
+-			i += 4;
+ 		str++;
+ 	}
+ 	return (i);
+--
+2.7.4

@@ -1,0 +1,77 @@
+.show_content {
+	margin: auto;
+	max-width: 512px;
+}
+
+.show_content input {
+	background:none!important;
+	color:inherit;
+	border:none;
+	padding:0!important;
+	font: inherit;
+	cursor: pointer;
+	text-shadow: inherit;
+}
+
+.show_content .pic_controls {
+	white-space: nowrap;
+}
+
+.show_pic {
+	background-color: #657385;
+	border-radius: 20px;
+	box-shadow: 0 0 2px #3f4750;
+	font-size: 30px;
+	font-weight: bolder;
+	color: #dadada;
+}
+
+.show_pic img {
+	max-width: 100%;
+	background-color: #dadada;
+	box-shadow: 0 0 2px #404040;
+	border-radius: 20px;
+}
+
+.comments {
+	background-color: #657385;
+	border-radius: 20px;
+	width: 100%;
+}
+
+.comment_container {
+	padding: 10px;
+}
+.comments {
+	margin-top: 20px;
+	text-align: left;
+	margin-bottom: 10px;
+}
+
+.comment_username {
+	color: #dadada;
+	text-shadow: 0 0 2px #3f4750;
+}
+
+.comment_content {
+	background-color: #dadada;
+	border: solid 20px #dadada;
+	border-radius: 10px;
+	text-align: center;
+	color: #373737;
+	text-shadow: 0 0 1px #3f4750;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.comments .com_content {
+	cursor: text;
+	width: 100%;
+}
+.comments .com_submit {
+	font-size: 40px;
+}
+
+.comments .comment_button {
+	text-align: center;
+}

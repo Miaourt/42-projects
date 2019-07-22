@@ -1,0 +1,83 @@
+@import url("dashboard.css");
+@import url("forms.css");
+@import url("gallery.css");
+@import url("pic.css");
+
+body {
+	margin: 0;
+	background-color: #E7DACB;
+	font-family: monospace;
+	font-size: 20px;
+}
+.content {
+	padding: 10px;
+	margin: auto;
+	max-width: 1200px;
+	text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+	.content {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}
+.header-content {
+	margin: auto;
+	max-width: 1200px;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+header {
+	border-top: solid 3px #657385;
+	border-bottom: solid 3px #4d5763;
+	background-color: #586473;
+	box-shadow: 0 0 10px;
+	width: 100%;
+	height: 50px;
+}
+header .logo {
+	margin: 5px;
+	color: #BE4248;
+	font-size: 48px;
+	line-height: 48px;
+	font-family: monospace;
+	font-weight: bold;
+	vertical-align: middle;
+	text-shadow: 1px 1px 2px black, 0 -1px 0px #db4e54;
+	position: absolute;
+}
+
+header .logout {
+	margin: 10px;
+	margin-left: 15px;
+	margin-right: 15px;
+	font-size: 24px;
+	vertical-align: middle;
+	text-shadow: 1px 1px 2px black;
+	float: right;
+}
+
+header .gallery {
+	margin: 10px;
+	margin-left: 15px;
+	margin-right: 15px;
+	font-size: 24px;
+	vertical-align: middle;
+	text-shadow: 1px 1px 2px black;
+	float: right;
+}
+
+header .dashboard {
+	margin: 10px;
+	margin-left: 15px;
+	margin-right: 15px;
+	font-size: 24px;
+	vertical-align: middle;
+	text-shadow: 1px 1px 2px black;
+	float: right;
+}

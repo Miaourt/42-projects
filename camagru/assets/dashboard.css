@@ -1,0 +1,164 @@
+.webcam {
+	width: 69%;
+	float: left;
+	border-top: solid 3px #657385;
+	border-bottom: solid 3px #4d5763;
+	background-color: #586473;
+	box-shadow: 0 0 10px;
+	margin-bottom: 10px;
+}
+
+.sidebar {
+	position: relative;
+	width: 30%;
+	float: right;
+	border-top: solid 3px #657385;
+	border-bottom: solid 3px #4d5763;
+	background-color: #586473;
+	box-shadow: 0 0 10px;
+	height: 621px;
+	overflow-y: auto;
+}
+
+@media screen and (max-width: 800px) {
+	.webcam {
+		width: 100%;
+	}
+
+	.sidebar {
+		width: 100%;
+		height: auto;
+		min-height: 150px;
+		overflow-y: visible;
+	}
+}
+
+.recent_pics {
+	width: 100%;
+}
+
+#preview_v {
+	display: none;
+	width: 100%;
+	height: auto;
+}
+
+#preview_v:hover {
+	cursor: pointer;
+}
+
+.mypics {
+	position: relative;
+}
+
+.mypics_content {
+	margin: 10px;
+	background-color: #657385;
+	border-bottom: solid 5px #657385;
+	border-radius: 20px;
+	box-shadow: 0 0 2px #3f4750;
+}
+
+.mypics_content img {
+	width: 100%;
+	background-color: #dadada;
+	box-shadow: 0 0 2px #404040;
+	border-radius: 20px;
+}
+
+.mypics_desc {
+	height: 22px;
+	font-weight: bolder;
+	font-size: 20px;
+	text-shadow: 0 0 3px #383838;
+	color: #dadada;
+	margin: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.mypics_desc_comment {
+	margin-right: 10px;
+	float: left;
+}
+
+.mypics_desc_like {
+	float: left;
+}
+
+.mypics_desc_del {
+	float: right;
+}
+
+.mypics_desc_del input {
+	background:none!important;
+	color:inherit;
+	border:none;
+	padding:0!important;
+	font: inherit;
+	cursor: pointer;
+	text-shadow: inherit;
+}
+
+.empty_message {
+	position: absolute;
+	padding: 10px;
+	font-weight: bold;
+	font-size: 30px;
+	color: #4f5966;
+	text-shadow: 0 0 1px;
+}
+
+/* selector */
+
+.selector_effects {
+	overflow-x: auto;
+	width: auto;
+	white-space: nowrap;
+	margin: 10px;
+}
+
+.effect {
+	width: 70px;
+	display: inline-block;
+	white-space: normal;
+}
+
+.effect_pic {
+	width: 70px;
+	height: 70px;
+	background-color: #657385;
+	border: solid 2px #657385;
+	white-space: normal;
+	box-shadow: 0 0 2px #3f4750;
+}
+
+#uploader {
+	background-color: #657385;
+	max-width: 380px;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	box-shadow: 0 0 5px #3f4750;
+}
+
+#uploader #fileup {
+	color:inherit;
+	border:none;
+	padding:0!important;
+	font: inherit;
+	font-weight: bold;
+	font-size: 15px;
+	cursor: pointer;
+	text-shadow: inherit;
+}
+
+#uploader #filesubmit {
+	background:none!important;
+	color:inherit;
+	border:none;
+	padding:0!important;
+	font: inherit;
+	cursor: pointer;
+	text-shadow: inherit;
+}
